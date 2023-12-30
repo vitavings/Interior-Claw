@@ -2,7 +2,7 @@ on:
   push:
     branches: [master]
 
-name: 🚀 Deploy springHomeInteriors on push to main
+name: 🚀 Deploy InteriorClaw on push to main
 jobs:
   web-deploy:
     name: 🎉 Deploy
