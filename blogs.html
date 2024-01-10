@@ -383,113 +383,13 @@
     <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
     <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
     <script src="assets/vendor/php-email-form/validate.js"></script>
+    <script src="assets/js/allblogs.js"></script>
 
     <!--
       Script to insert blogs dynamically
 
     -->
-    <script>
-      const blogsElement = document.getElementById("blogs");
-      console.log(blogsElement);
-      const blogs = [
-        {
-          id: 1,
-          img: "assets/img/about-boxes-1.jpg",
-          title: "Our Mission",
-          content:
-            "Transforming spaces with elegant designs and timeless style.",
-        },
-        {
-          id: 2,
-          img: "assets/img/about-boxes-2.jpg",
-          title: "Latest Trends",
-          content:
-            "Stay updated with the latest trends in interior design for a modern living experience.",
-        },
-        {
-          id: 3,
-          img: "assets/img/about-boxes-3.jpg",
-          title: "Creating Comfort",
-          content:
-            "Crafting spaces that blend functionality and comfort, making your home a haven.",
-        },
-        {
-          id: 4,
-          img: "assets/img/about-boxes-1.jpg",
-          title: "Sustainable Designs",
-          content:
-            "Exploring eco-friendly and sustainable design options to contribute to a greener future.",
-        },
-        {
-          id: 5,
-          img: "assets/img/about-boxes-3.jpg",
-          title: "Artistic Elements",
-          content:
-            "Incorporating artistic elements to add a touch of creativity and personality to your living spaces.",
-        },
-        {
-          id: 6,
-          img: "assets/img/about-boxes-2.jpg",
-          title: "Functional Layouts",
-          content:
-            "Optimizing space with functional layouts that enhance both aesthetics and usability.",
-        },
-        {
-          id: 7,
-          img: "assets/img/about-boxes-1.jpg",
-          title: "Luxury Living",
-          content:
-            "Experience the epitome of luxury living with our exquisite interior design solutions.",
-        },
-        {
-          id: 8,
-          img: "assets/img/about-boxes-3.jpg",
-          title: "Cozy Corners",
-          content:
-            "Discover ideas for creating cozy corners that invite relaxation and tranquility.",
-        },
-        {
-          id: 9,
-          img: "assets/img/about-boxes-2.jpg",
-          title: "Timeless Elegance",
-          content:
-            "Embrace timeless elegance with classic design elements that never go out of style.",
-        },
-        {
-          id: 10,
-          img: "assets/img/about-boxes-1.jpg",
-          title: "Smart Home Integration",
-          content:
-            "Explore how smart home technology can seamlessly integrate with your interior design.",
-        },
-      ];
-      const innerHtmlTxt = blogs.reduce((accumulator, blog) => {
-        return (
-          accumulator +
-          `<div
-         class="col-lg-4 col-md-6 d-flex align-items-stretch"
-         data-aos="fade-up"
-         data-aos-delay="100"
-      id = "blog_${blog.id}"
-       >
-         <div class="card">
-           <img
-             src="${blog.img}"
-             class="card-img-top"
-             alt="..."
-           />
-           <div class="card-body">
-             <h5 class="card-title"><a href="">${blog.title}</a></h5>
-             <p class="card-text">
-               ${blog.content}
-             </p>
-           </div>
-         </div>
-       </div>`
-        );
-      }, "");
-      blogsElement.innerHTML = innerHtmlTxt;
-    </script>
+    <script></script>
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
   </body>

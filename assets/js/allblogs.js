@@ -1,6 +1,9 @@
 //import { getData } from "./blogdata";
 
-const blogContent = [
+const blogsElement = document.getElementById("blogs");
+console.log(blogsElement);
+
+const blogs = [
   {
     id: 1,
     bName: "SmallSpaceSolutions",
@@ -122,52 +125,30 @@ const blogContent = [
       "Embrace changing seasons with trendy decor curated by Interior Claw. Transform your spaces for holidays with festive flair. Let your home reflect the beauty of each season.",
   },
 ];
-
-const getParam = () => {
-  const qp = new URLSearchParams(window.location.search);
-  return qp.get("id");
-};
-
-const blogData = () => {
-  const blogId = 2; // getParam();
-  let blogData = blogContent.find((p) => p.id === +blogId);
-
-  if (!blogData) {
-    blogData = blogContent[0];
-  }
-
-  const classToPropertyMap = {
-    bName: "bName",
-    bImage: "bImage",
-    bTitle: "bTitle",
-    bh1: "bh1",
-    bh2: "bh2",
-    bh3: "bh3",
-    bp1: "bp1",
-    bp2: "bp2",
-    bp3: "bp3",
-    bp4: "bp4",
-    bp5: "bp5",
-    bp6: "bp6",
-    bq1: "bq1",
-    bi1: "bi1",
-  };
-
-  if (blogData) {
-    for (const className in classToPropertyMap) {
-      const elements = document.getElementsByClassName(className);
-      Array.from(elements).forEach((element) => {
-        const property = classToPropertyMap[className];
-        if (property === "bImage" || "bi1") {
-          element.src = blogData[property] || "assets/img/blog/blog-1.jpg";
-        }
-        element.innerHTML = blogData[property] || "";
-      });
-    }
-  } else {
-    // Handle the case where the blog post was not found
-    // You can display an error message or redirect to a default page
-  }
-};
-
-blogData();
+console;
+const innerHtmlTxt = blogs.reduce((accumulator, blog) => {
+  return (
+    accumulator +
+    `<div
+         class="col-lg-4 col-md-6 d-flex align-items-stretch"
+         data-aos="fade-up"
+         data-aos-delay="100"
+      id = "blog_${blog.id}"
+       >
+         <div class="card">
+           <img
+             src="${blog.bImage}"
+             class="card-img-top"
+             alt="..."
+           />
+           <div class="card-body">
+             <h5 class="card-title"><a href="blog-detail.html?id=${blog.id}">${blog.bTitle}</a></h5>
+             <p class="card-text">
+               ${blog.content}
+             </p>
+           </div>
+         </div>
+       </div>`
+  );
+}, "");
+blogsElement.innerHTML = innerHtmlTxt;
