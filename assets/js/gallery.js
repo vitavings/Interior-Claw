@@ -114,31 +114,34 @@ const galleryData = [
 ];
 
 // You can use the galleryData array as needed in your application
-console.log(galleryData);
+//console.log(galleryData);
 
-const galleryHTML = `<div class="col-lg-4 col-md-6 portfolio-item ${categoryClass}">
-            <img src="${img}" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>${title}</h4>
-              <p>${category}</p>
-              <a href="${img}" data-gallery="portfolioGallery"
-                class="portfolio-lightbox preview-link" title="Bedroom 1"><i class="bx bx-plus"></i></a>
-            </div>
-          </div>`;
+// const galleryHTML = `<div class="col-lg-4 col-md-6 portfolio-item ${categoryClass}">
+//             <img src="${img}" class="img-fluid" alt="">
+//             <div class="portfolio-info">
+//               <h4>${title}</h4>
+//               <p>${category}</p>
+//               <a href="${img}" data-gallery="portfolioGallery"
+//                 class="portfolio-lightbox preview-link" title="Bedroom 1"><i class="bx bx-plus"></i></a>
+//             </div>
+//           </div>`;
 
-<li data-filter=".filter-bedroom">Bedroom</li>;
 const galleryContainer = document.getElementById("gallery-container");
 const galleryFilter = document.getElementById("portfolio-flters");
 
-galleryData.foreach((galleryItem) => {
-  galleryFilter.appendChild(
-    `<li data-filter=".${galleryItem.categoryClass}">${galleryItem.category}</li>`
-  );
+galleryData.forEach((galleryItem) => {
+  let listItem = document.createElement("li");
+  listItem.setAttribute("data-filter", "." + galleryItem.categoryClass);
+  listItem.textContent = galleryItem.category;
+  galleryFilter.appendChild(listItem);
 });
 
-galleryData.reduce((galleryItem) => {
+const galleryTxt = galleryData.reduce((accumulatorP, galleryItem) => {
   const htmlTxt = galleryItem.items.reduce((accumulator, item) => {
-    `<div class="col-lg-4 col-md-6 portfolio-item ${galleryItem.categoryClass}">
+    console.log(galleryItem);
+    return (
+      accumulator +
+      `<div class="col-lg-4 col-md-6 portfolio-item ${galleryItem.categoryClass}">
             <img src="${item.img}" class="img-fluid" alt="">
             <div class="portfolio-info">
               <h4>${item.title}</h4>
@@ -146,7 +149,12 @@ galleryData.reduce((galleryItem) => {
               <a href="${item.img}" data-gallery="portfolioGallery"
                 class="portfolio-lightbox preview-link" title="Bedroom 1"><i class="bx bx-plus"></i></a>
             </div>
-          </div>`;
-  });
-  galleryContainer.appendChild(htmlTxt);
-});
+          </div>`
+    );
+  }, "");
+  console.log(htmlTxt);
+  return accumulatorP + htmlTxt;
+}, "");
+
+console.log(galleryTxt);
+galleryContainer.innerHTML = galleryTxt;
