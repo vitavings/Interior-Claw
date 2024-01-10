@@ -1,63 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
     <title>Inner Page - Dewi Bootstrap Template</title>
-    <meta content="" name="description">
-    <meta content="" name="keywords">
+    <meta content="" name="description" />
+    <meta content="" name="keywords" />
 
     <!-- Favicons -->
-    <link href="assets/img/favicon.png" rel="icon">
-    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="assets/img/favicon.png" rel="icon" />
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
 
     <!-- Google Fonts -->
     <link
-        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
-        rel="stylesheet">
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+      rel="stylesheet"
+    />
 
     <!-- Vendor CSS Files -->
-    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
+    <link
+      href="assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="assets/vendor/bootstrap-icons/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet" />
+    <link
+      href="assets/vendor/glightbox/css/glightbox.min.css"
+      rel="stylesheet"
+    />
+    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet" />
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
 
     <!-- Template Main CSS File -->
-    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet" />
     <style>
-        #banner-container {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            /* Semi-transparent black backdrop */
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
+      .whatsapp_float {
+        position: fixed;
+        bottom: 70px;
+        right: 20px;
+      }
+
+      .display-none {
+        display: none;
+      }
+
+      .loading {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 300px;
+      }
+
+      .lds-dual-ring {
+        display: inline-block;
+        width: 80px;
+        height: 80px;
+      }
+
+      .lds-dual-ring:after {
+        content: " ";
+        display: block;
+        width: 64px;
+        height: 64px;
+        margin: 8px;
+        border-radius: 50%;
+        border: 6px solid #f8f1f1;
+        border-color: #0a98c0 transparent #0a98c0 transparent;
+        animation: lds-dual-ring 1.2s linear infinite;
+      }
+
+      @keyframes lds-dual-ring {
+        0% {
+          transform: rotate(0deg);
         }
 
-        #banner {
-
-            background-color: #fff;
-            padding: 20px;
-            text-align: center;
-            border-radius: 10px;
+        100% {
+          transform: rotate(360deg);
         }
+      }
+    </style>
 
-        .close-btn {
-            cursor: pointer;
+    <style>
+      #banner-container {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        /* Semi-transparent black backdrop */
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+      }
 
-        }
+      #banner {
+        background-color: #fff;
+        padding: 20px;
+        text-align: center;
+        border-radius: 10px;
+      }
 
-       
+      .close-btn {
+        cursor: pointer;
+      }
     </style>
     <!-- =======================================================
   * Template Name: Dewi
@@ -66,363 +118,604 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
-</head>
+  </head>
 
-<body>
-
+  <body>
     <!-- ======= Header ======= -->
     <header id="header" class="fixed-top header-inner-pages">
-        <div class="container d-flex align-items-center justify-content-between">
+      <div class="container d-flex align-items-center justify-content-between">
+        <h1 class="logo"><a href="index.html">Interior Claw</a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
-            <h1 class="logo"><a href="index.html">Interior Claw</a></h1>
-            <!-- Uncomment below if you prefer to use an image logo -->
-            <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
-
-            <nav id="navbar" class="navbar">
-                <ul>
-                    <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-                    <li><a class="nav-link scrollto" href="aboutus.html">About</a></li>
-                    <li><a class="nav-link scrollto" href="blogs.html">Blogs</a></li>
-                    <li><a class="nav-link scrollto " href="gallery.html">Gallery</a></li>
-                    <li class="dropdown"><a href="#"><span>Services</span> <i class="bi bi-chevron-down"></i></a>
-                        <ul>
-                            <li><a href="#">Drop Down 1</a></li>
-                            <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i
-                                        class="bi bi-chevron-right"></i></a>
-                                <ul>
-                                    <li><a href="#">Deep Drop Down 1</a></li>
-                                    <li><a href="#">Deep Drop Down 2</a></li>
-                                    <li><a href="#">Deep Drop Down 3</a></li>
-                                    <li><a href="#">Deep Drop Down 4</a></li>
-                                    <li><a href="#">Deep Drop Down 5</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#">Drop Down 2</a></li>
-                            <li><a href="#">Drop Down 3</a></li>
-                            <li><a href="#">Drop Down 4</a></li>
-                        </ul>
-                    </li>
-                    <li><a class="nav-link scrollto" href="contactus.html">Contact</a></li>
-                </ul>
-                <i class="bi bi-list mobile-nav-toggle"></i>
-            </nav><!-- .navbar -->
-
-        </div>
-    </header><!-- End Header -->
+        <nav id="navbar" class="navbar">
+          <ul>
+            <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+            <li><a class="nav-link scrollto" href="aboutus.html">About</a></li>
+            <li><a class="nav-link scrollto" href="blogs.html">Blogs</a></li>
+            <li>
+              <a class="nav-link scrollto" href="gallery.html">Gallery</a>
+            </li>
+            <li class="dropdown">
+              <a href="#"
+                ><span>Services</span> <i class="bi bi-chevron-down"></i
+              ></a>
+              <ul>
+                <li><a href="#">Drop Down 1</a></li>
+                <li class="dropdown">
+                  <a href="#"
+                    ><span>Deep Drop Down</span>
+                    <i class="bi bi-chevron-right"></i
+                  ></a>
+                  <ul>
+                    <li><a href="#">Deep Drop Down 1</a></li>
+                    <li><a href="#">Deep Drop Down 2</a></li>
+                    <li><a href="#">Deep Drop Down 3</a></li>
+                    <li><a href="#">Deep Drop Down 4</a></li>
+                    <li><a href="#">Deep Drop Down 5</a></li>
+                  </ul>
+                </li>
+                <li><a href="#">Drop Down 2</a></li>
+                <li><a href="#">Drop Down 3</a></li>
+                <li><a href="#">Drop Down 4</a></li>
+              </ul>
+            </li>
+            <li>
+              <a class="nav-link scrollto" href="contactus.html">Contact</a>
+            </li>
+          </ul>
+          <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav>
+        <!-- .navbar -->
+      </div>
+    </header>
+    <!-- End Header -->
 
     <main id="main">
+      <!-- ======= Breadcrumbs ======= -->
+      <section class="breadcrumbs">
+        <div class="container">
+          <div class="d-flex justify-content-between align-items-center">
+            <h2>Inner Page</h2>
+            <ol>
+              <li><a href="index.html">Home</a></li>
+              <li>Inner Page</li>
+            </ol>
+          </div>
+        </div>
+      </section>
+      <!-- End Breadcrumbs -->
 
-        <!-- ======= Breadcrumbs ======= -->
-        <section class="breadcrumbs">
-            <div class="container">
+      <!-- ======= Contact Section ======= -->
+      <section id="contact" class="contact">
+        <div class="container" data-aos="fade-up">
+          <div class="section-title">
+            <h2>Quote</h2>
+            <p>Get the quote</p>
+          </div>
 
-                <div class="d-flex justify-content-between align-items-center">
-                    <h2>Inner Page</h2>
-                    <ol>
-                        <li><a href="index.html">Home</a></li>
-                        <li>Inner Page</li>
-                    </ol>
-                </div>
-
+          <div class="row">
+            <div class="col-lg-6">
+              <img
+                src="assets/img/Interior Claw - Bedroom/Interior Claw - Bedroom - 9.webp"
+                class="img-fluid"
+                alt=""
+                style="height: auto; width: 87%"
+              />
             </div>
-        </section><!-- End Breadcrumbs -->
 
-        <!-- ======= Contact Section ======= -->
-        <section id="contact" class="contact">
-            <div class="container" data-aos="fade-up">
-
-                <div class=" section-title">
-                    <h2>Quote</h2>
-                    <p>Get the quote</p>
-                </div>
-
-                <div class="row">
-
-                    <div class="col-lg-6">
-
-                        <img src="assets/img/Interior Claw - Bedroom/Interior Claw - Bedroom - 9.webp" class="img-fluid"
-                            alt="" style="height: auto; width: 87%;">
-
+            <div class="col-lg-6 mt-4 mt-lg-0">
+              <form name="submit-to-google-sheet" id="myForm" class="php-email-form">
+                <div id="contact-form">
+                  <div class="row">
+                    <div class="col-md-6 form-group">
+                      <input
+                        type="text"
+                        name="name"
+                        class="form-control"
+                        id="name"
+                        placeholder="Your Name"
+                        required
+                      />
                     </div>
-
-                    <div class="col-lg-6 mt-4 mt-lg-0">
-                        <form action="" method="post" role="form" class="php-email-form">
-                            <div class="row">
-                                <div class="col-md-6 form-group">
-                                    <input type="text" name="name" class="form-control" id="name"
-                                        placeholder="Your Name" required>
-                                </div>
-                                <div class="col-md-6 form-group mt-3 mt-md-0">
-                                    <input type="email" class="form-control" name="email" id="email"
-                                        placeholder="Your Email" required>
-                                </div>
-                            </div>
-                            <div class="form-group mt-4">
-                                <input type="text" class="form-control" name="number" id="number"
-                                    placeholder="Mobile Number" required>
-                            </div>
-                            <div class="row my-4">
-                                <div class="col-md-6 form-group">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value=""
-                                            id="flexCheckCheckedDisabled" checked disabled>
-                                        <label class="form-check-label mx-2" for="flexCheckDefault">
-                                            Default checkbox
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 form-group mt-3 mt-md-0">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked"
-                                            checked>
-                                        <label class="form-check-label mx-2" for="flexCheckChecked">
-                                            Checked checkbox
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row my-4">
-                                <div class="col-md-6 form-group">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                        <label class="form-check-label mx-2" for="flexCheckDefault">
-                                            Default checkbox
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 form-group mt-3 mt-md-0">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked"
-                                            checked>
-                                        <label class="form-check-label mx-2" for="flexCheckChecked">
-                                            Checked checkbox
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row my-4">
-                                <div class="col-md-6 form-group">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                        <label class="form-check-label mx-2" for="flexCheckDefault">
-                                            Default checkbox
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 form-group mt-3 mt-md-0">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked"
-                                            checked>
-                                        <label class="form-check-label mx-2" for="flexCheckChecked">
-                                            Checked checkbox
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="text-center"><button id="showBannerBtn" type="submit">Get Quote</button></div>
-                        </form>
+                    <div class="col-md-6 form-group mt-3 mt-md-0">
+                      <input
+                        type="email"
+                        class="form-control"
+                        name="email"
+                        id="email"
+                        placeholder="Your Email"
+                        required
+                      />
                     </div>
-
-                </div>
-
-            </div>
-            <!-- Pop-up  -->
-            <div id="banner-container">
-                <div id="banner">
-                    <!-- Banner content goes here -->
-                    <p>This is your banner content. <span class="close-btn" onclick="closeBanner()">Close</span></p>
-                </div>
-            </div>
-        </section><!-- End Contact Section -->
-
-        <!-- ======= Testimonials Section ======= -->
-        <section id="testimonials" class="testimonials">
-            <div class="container" data-aos="zoom-in">
-
-                <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
-                    <div class="swiper-wrapper">
-
-                        <div class="swiper-slide">
-                            <div class="testimonial-item">
-                                <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
-                                <h3>Saul Goodman</h3>
-                                <h4>Ceo &amp; Founder</h4>
-                                <p>
-                                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                                    Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit
-                                    rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam,
-                                    risus at semper.
-                                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                                </p>
-                            </div>
-                        </div><!-- End testimonial item -->
-
-                        <div class="swiper-slide">
-                            <div class="testimonial-item">
-                                <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
-                                <h3>Sara Wilsson</h3>
-                                <h4>Designer</h4>
-                                <p>
-                                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                                    Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid
-                                    cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet
-                                    legam anim culpa.
-                                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                                </p>
-                            </div>
-                        </div><!-- End testimonial item -->
-
-                        <div class="swiper-slide">
-                            <div class="testimonial-item">
-                                <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
-                                <h3>Jena Karlis</h3>
-                                <h4>Store Owner</h4>
-                                <p>
-                                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                                    Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem
-                                    veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint
-                                    minim.
-                                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                                </p>
-                            </div>
-                        </div><!-- End testimonial item -->
-
-                        <div class="swiper-slide">
-                            <div class="testimonial-item">
-                                <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
-                                <h3>Matt Brandon</h3>
-                                <h4>Freelancer</h4>
-                                <p>
-                                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                                    Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim
-                                    fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem
-                                    dolore labore illum veniam.
-                                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                                </p>
-                            </div>
-                        </div><!-- End testimonial item -->
-
-                        <div class="swiper-slide">
-                            <div class="testimonial-item">
-                                <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
-                                <h3>John Larson</h3>
-                                <h4>Entrepreneur</h4>
-                                <p>
-                                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                                    Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster
-                                    veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam
-                                    culpa fore nisi cillum quid.
-                                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                                </p>
-                            </div>
-                        </div><!-- End testimonial item -->
-
+                  </div>
+                  <div class="form-group mt-4">
+                    <input
+                      type="tel"
+                      class="form-control"
+                      name="number"
+                      id="number"
+                      placeholder="Mobile Number"
+                      required
+                    />
+                  </div>
+                  <div class="form-group my-4">
+                    <input
+                      type="text"
+                      class="form-control"
+                      name="services"
+                      id="selectedServicesInput"
+                      placeholder="Select Services Below"
+                      required
+                      readonly
+                    />
+                  </div>
+                  <div class="row my-4">
+                    <div class="col-md-6 form-group">
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          id="checkbox1"
+                          value="Service 1"
+                        />
+                        <label
+                          class="form-check-label mx-2"
+                          for="flexCheckDefault"
+                        >
+                          Default checkbox
+                        </label>
+                      </div>
                     </div>
-                    <div class="swiper-pagination"></div>
-                </div>
+                    <div class="col-md-6 form-group mt-3 mt-md-0">
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          id="checkbox2"
+                          value="Service 2"
+                        />
+                        <label
+                          class="form-check-label mx-2"
+                          for="flexCheckChecked"
+                        >
+                          Checked checkbox
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row my-4">
+                    <div class="col-md-6 form-group">
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          id="checkbox3"
+                          value="Service 3"
+                        />
+                        <label
+                          class="form-check-label mx-2"
+                          for="flexCheckDefault"
+                        >
+                          Default checkbox
+                        </label>
+                      </div>
+                    </div>
+                    <div class="col-md-6 form-group mt-3 mt-md-0">
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          id="checkbox4"
+                          value="Service 4"
+                        />
+                        <label
+                          class="form-check-label mx-2"
+                          for="flexCheckChecked"
+                        >
+                          Checked checkbox
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row my-4">
+                    <div class="col-md-6 form-group">
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          id="checkbox5"
+                          value="Service 5"
+                        />
+                        <label
+                          class="form-check-label mx-2"
+                          for="flexCheckDefault"
+                        >
+                          Default checkbox
+                        </label>
+                      </div>
+                    </div>
+                    <div class="col-md-6 form-group mt-3 mt-md-0">
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          id="checkbox6"
+                          value="Service 6"
+                        />
+                        <label
+                          class="form-check-label mx-2"
+                          for="flexCheckChecked"
+                        >
+                          Checked checkbox
+                        </label>
+                      </div>
+                    </div>
+                  </div>
 
+                  <div class="text-center">
+                    <div id="loader" class="display-none">
+                      <div class="lds-dual-ring"></div>
+                    </div>
+                    <br />
+                    <button id="showBannerBtn" type="submit">Get Quote</button>
+                  </div>
+                </div>
+              </form>
             </div>
-        </section><!-- End Testimonials Section -->
-    </main><!-- End #main -->
+          </div>
+        </div>
+        <!-- Pop-up  -->
+        <div id="banner-container">
+          <div id="banner">
+            <!-- Banner content goes here -->
+            <p>
+              This is your banner content.
+              <span class="close-btn" onclick="closeBanner()">Close</span>
+            </p>
+          </div>
+        </div>
+      </section>
+      <!-- End Contact Section -->
+
+      <!-- ======= Testimonials Section ======= -->
+      <section id="testimonials" class="testimonials">
+        <div class="container" data-aos="zoom-in">
+          <div
+            class="testimonials-slider swiper"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="testimonial-item">
+                  <img
+                    src="assets/img/testimonials/testimonials-1.jpg"
+                    class="testimonial-img"
+                    alt=""
+                  />
+                  <h3>Saul Goodman</h3>
+                  <h4>Ceo &amp; Founder</h4>
+                  <p>
+                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                    Proin iaculis purus consequat sem cure digni ssim donec
+                    porttitora entum suscipit rhoncus. Accusantium quam,
+                    ultricies eget id, aliquam eget nibh et. Maecen aliquam,
+                    risus at semper.
+                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                  </p>
+                </div>
+              </div>
+              <!-- End testimonial item -->
+
+              <div class="swiper-slide">
+                <div class="testimonial-item">
+                  <img
+                    src="assets/img/testimonials/testimonials-2.jpg"
+                    class="testimonial-img"
+                    alt=""
+                  />
+                  <h3>Sara Wilsson</h3>
+                  <h4>Designer</h4>
+                  <p>
+                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                    Export tempor illum tamen malis malis eram quae irure esse
+                    labore quem cillum quid cillum eram malis quorum velit fore
+                    eram velit sunt aliqua noster fugiat irure amet legam anim
+                    culpa.
+                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                  </p>
+                </div>
+              </div>
+              <!-- End testimonial item -->
+
+              <div class="swiper-slide">
+                <div class="testimonial-item">
+                  <img
+                    src="assets/img/testimonials/testimonials-3.jpg"
+                    class="testimonial-img"
+                    alt=""
+                  />
+                  <h3>Jena Karlis</h3>
+                  <h4>Store Owner</h4>
+                  <p>
+                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                    Enim nisi quem export duis labore cillum quae magna enim
+                    sint quorum nulla quem veniam duis minim tempor labore quem
+                    eram duis noster aute amet eram fore quis sint minim.
+                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                  </p>
+                </div>
+              </div>
+              <!-- End testimonial item -->
+
+              <div class="swiper-slide">
+                <div class="testimonial-item">
+                  <img
+                    src="assets/img/testimonials/testimonials-4.jpg"
+                    class="testimonial-img"
+                    alt=""
+                  />
+                  <h3>Matt Brandon</h3>
+                  <h4>Freelancer</h4>
+                  <p>
+                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                    Fugiat enim eram quae cillum dolore dolor amet nulla culpa
+                    multos export minim fugiat minim velit minim dolor enim duis
+                    veniam ipsum anim magna sunt elit fore quem dolore labore
+                    illum veniam.
+                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                  </p>
+                </div>
+              </div>
+              <!-- End testimonial item -->
+
+              <div class="swiper-slide">
+                <div class="testimonial-item">
+                  <img
+                    src="assets/img/testimonials/testimonials-5.jpg"
+                    class="testimonial-img"
+                    alt=""
+                  />
+                  <h3>John Larson</h3>
+                  <h4>Entrepreneur</h4>
+                  <p>
+                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                    Quis quorum aliqua sint quem legam fore sunt eram irure
+                    aliqua veniam tempor noster veniam enim culpa labore duis
+                    sunt culpa nulla illum cillum fugiat legam esse veniam culpa
+                    fore nisi cillum quid.
+                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                  </p>
+                </div>
+              </div>
+              <!-- End testimonial item -->
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+      </section>
+      <!-- End Testimonials Section -->
+    </main>
+    <!-- End #main -->
 
     <!-- ======= Footer ======= -->
     <footer id="footer">
-        <div class="footer-top">
-            <div class="container">
-                <div class="row">
-
-                    <div class="col-lg-3 col-md-6">
-                        <div class="footer-info">
-                            <h3>Interior Claw</h3>
-                            <p>
-                                Gachibowli, Hyderabad <br>
-                                Talngana, India<br><br>
-                                <strong>Phone:</strong> +91 99999 99999<br>
-                                <strong>Email:</strong> info@example.com<br>
-                            </p>
-                            <div class="social-links mt-3">
-                                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-                                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-                                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-                                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-                                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-2 col-md-6 footer-links">
-                        <h4>Useful Links</h4>
-                        <ul>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 footer-links">
-                        <h4>Our Services</h4>
-                        <ul>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Service</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Service</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Service</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Service</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Service</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 footer-newsletter">
-                        <h4>Our Newsletter</h4>
-                        <!-- <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p> -->
-                        <form action="" method="post">
-                            <input type="email" name="email"><input type="submit" value="Subscribe">
-                        </form>
-
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
+      <div class="footer-top">
         <div class="container">
-            <div class="copyright">
-                &copy; Copyright <strong><span>Interior Claw</span></strong>. All Rights Reserved
+          <div class="row">
+            <div class="col-lg-3 col-md-6">
+              <div class="footer-info">
+                <h3>Interior Claw</h3>
+                <p>
+                  Gachibowli, Hyderabad <br />
+                  Talngana, India<br /><br />
+                  <strong>Phone:</strong> +91 99999 99999<br />
+                  <strong>Email:</strong> info@example.com<br />
+                </p>
+                <div class="social-links mt-3">
+                  <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                  <a href="#" class="facebook"
+                    ><i class="bx bxl-facebook"></i
+                  ></a>
+                  <a href="#" class="instagram"
+                    ><i class="bx bxl-instagram"></i
+                  ></a>
+                  <a href="#" class="google-plus"
+                    ><i class="bx bxl-skype"></i
+                  ></a>
+                  <a href="#" class="linkedin"
+                    ><i class="bx bxl-linkedin"></i
+                  ></a>
+                </div>
+              </div>
             </div>
-            <div class="credits">
-                <!-- All the links in the footer should remain intact. -->
-                <!-- You can delete the links only if you purchased the pro version. -->
-                <!-- Licensing information: https://bootstrapmade.com/license/ -->
-                <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/dewi-free-multi-purpose-html-template/ -->
-                Designed by <a href="https://www.vitavings.com/">Vitavings</a>
+
+            <div class="col-lg-2 col-md-6 footer-links">
+              <h4>Useful Links</h4>
+              <ul>
+                <li>
+                  <i class="bx bx-chevron-right"></i> <a href="#">Home</a>
+                </li>
+                <li>
+                  <i class="bx bx-chevron-right"></i> <a href="#">About us</a>
+                </li>
+                <li>
+                  <i class="bx bx-chevron-right"></i> <a href="#">Services</a>
+                </li>
+                <li>
+                  <i class="bx bx-chevron-right"></i>
+                  <a href="#">Terms of service</a>
+                </li>
+                <li>
+                  <i class="bx bx-chevron-right"></i>
+                  <a href="#">Privacy policy</a>
+                </li>
+              </ul>
             </div>
+
+            <div class="col-lg-3 col-md-6 footer-links">
+              <h4>Our Services</h4>
+              <ul>
+                <li>
+                  <i class="bx bx-chevron-right"></i> <a href="#">Service</a>
+                </li>
+                <li>
+                  <i class="bx bx-chevron-right"></i> <a href="#">Service</a>
+                </li>
+                <li>
+                  <i class="bx bx-chevron-right"></i> <a href="#">Service</a>
+                </li>
+                <li>
+                  <i class="bx bx-chevron-right"></i> <a href="#">Service</a>
+                </li>
+                <li>
+                  <i class="bx bx-chevron-right"></i> <a href="#">Service</a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="col-lg-4 col-md-6 footer-newsletter">
+              <h4>Our Newsletter</h4>
+              <!-- <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p> -->
+              <form action="" method="post">
+                <input type="email" name="email" /><input
+                  type="submit"
+                  value="Subscribe"
+                />
+              </form>
+            </div>
+          </div>
         </div>
-    </footer><!-- End Footer -->
+      </div>
+
+      <div class="container">
+        <div class="copyright">
+          &copy; Copyright <strong><span>Interior Claw</span></strong
+          >. All Rights Reserved
+        </div>
+        <div class="credits">
+          <!-- All the links in the footer should remain intact. -->
+          <!-- You can delete the links only if you purchased the pro version. -->
+          <!-- Licensing information: https://bootstrapmade.com/license/ -->
+          <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/dewi-free-multi-purpose-html-template/ -->
+          Designed by <a href="https://www.vitavings.com/">Vitavings</a>
+        </div>
+      </div>
+    </footer>
+    <!-- End Footer -->
 
     <div id="preloader"></div>
-    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
-            class="bi bi-arrow-up-short"></i></a>
+    <a
+      href="#"
+      class="back-to-top d-flex align-items-center justify-content-center"
+      ><i class="bi bi-arrow-up-short"></i
+    ></a>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            // Get the button and banner container elements
-            var showBannerBtn = document.getElementById("showBannerBtn");
-            var bannerContainer = document.getElementById("banner-container");
+      document.addEventListener("DOMContentLoaded", function () {
+        // Get the input element
+        var selectedServicesInput = document.getElementById(
+          "selectedServicesInput"
+        );
 
-            // Handle button click
-            showBannerBtn.addEventListener("click", function () {
-                // Display the banner container
-                bannerContainer.style.display = "flex";
+
+        // Get all checkboxes
+        var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+
+       
+
+        // Add event listener to each checkbox
+        checkboxes.forEach(function (checkbox) {
+          checkbox.addEventListener("change", function () {
+            // Filter selected checkboxes
+            var selectedCheckboxes = Array.from(checkboxes).filter(function (
+              checkbox
+            ) {
+              return checkbox.checked;
             });
 
-            // Handle close button click
-            var closeBtn = bannerContainer.querySelector(".close-btn");
-            closeBtn.addEventListener("click", function () {
-                // Close the banner container
-                bannerContainer.style.display = "none";
+            // Extract values from selected checkboxes
+            var selectedValues = selectedCheckboxes.map(function (checkbox) {
+              return checkbox.value;
             });
+
+            // Update the disabled input with comma-separated values
+            selectedServicesInput.value = selectedValues.join(", ");
+          });
         });
+      });
     </script>
+    <!-- <script>
+      function showBanner() {
+        // Get the button and banner container elements
+        var showBannerBtn = document.getElementById("showBannerBtn");
+        var bannerContainer = document.getElementById("banner-container");
+
+        // Handle button click
+        showBannerBtn.addEventListener("click", function () {
+          // Display the banner container
+          bannerContainer.style.display = "flex";
+        });
+
+        // Handle close button click
+        var closeBtn = bannerContainer.querySelector(".close-btn");
+        closeBtn.addEventListener("click", function () {
+          // Close the banner container
+          bannerContainer.style.display = "none";
+        });
+      }
+    </script> --> 
+
+    <script>
+      const scriptURL =
+        "https://script.google.com/macros/s/AKfycbwNv6bD3KXLWvZV5Oi6k9nP-7drEGbjrSJ2zYKdRfnM217TG4OIDZT-hZ5_1eTk9OFcLQ/exec";
+      const form = document.forms["submit-to-google-sheet"];
+
+      function showBanner() {
+        var bannerContainer = document.getElementById("banner-container");
+
+        bannerContainer.style.display = "flex";
+        // Handle close button click
+        var closeBtn = bannerContainer.querySelector(".close-btn");
+        closeBtn.addEventListener("click", function () {
+          // Close the banner container
+          bannerContainer.style.display = "none";
+        });
+      }
+
+      form.addEventListener("submit", (e) => {
+        document.getElementById("loader").classList.add("loading");
+        document.getElementById("loader").classList.remove("display-none");
+        document.getElementById("contact-form").classList.add("display-none");
+        e.preventDefault();
+        fetch(scriptURL, { method: "POST", body: new FormData(form) })
+          .then((response) => {
+            console.log("Success!", response);
+            document.getElementById("loader").classList.add("display-none");
+            document.getElementById("loader").classList.remove("loading");
+            document
+              .getElementById("contact-form")
+              .classList.remove("display-none");
+
+            form.reset();
+
+            showBanner();
+
+            // window.location.href = "index.html";
+          })
+          .catch((error) => {
+            document.getElementById("loader").classList.add("display-none");
+            document.getElementById("loader").classList.remove("loading");
+            document
+              .getElementById("contact-form")
+              .classList.remove("display-none");
+            console.error("Error!", error.message);
+            alert("An error occured, Please trying again!");
+          });
+      });
+    </script>
+
     <!-- Vendor JS Files -->
     <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
     <script src="assets/vendor/aos/aos.js"></script>
@@ -434,7 +727,5 @@
 
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
-
-</body>
-
+  </body>
 </html>
