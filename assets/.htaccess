@@ -3,7 +3,7 @@
 
     # Redirect www to non-www
     RewriteCond %{HTTP_HOST} ^www\.vitavings\.com [NC]
-    RewriteRule ^(.*)$ https://vitavings.com/$1 [L,R=301]
+    RewriteRule ^(.*)$ https://interiorclaw.in/$1 [L,R=301]
 
     # Force HTTPS
     RewriteCond %{HTTPS} off
