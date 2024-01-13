@@ -206,7 +206,11 @@
             </div>
 
             <div class="col-lg-6 mt-4 mt-lg-0">
-              <form name="submit-to-google-sheet" id="myForm" class="php-email-form">
+              <form
+                name="submit-to-google-sheet"
+                id="myForm"
+                class="php-email-form"
+              >
                 <div id="contact-form">
                   <div class="row">
                     <div class="col-md-6 form-group">
@@ -258,13 +262,13 @@
                           class="form-check-input"
                           type="checkbox"
                           id="checkbox1"
-                          value="Service 1"
+                          value="Custom Design Solutions"
                         />
                         <label
                           class="form-check-label mx-2"
                           for="flexCheckDefault"
                         >
-                          Default checkbox
+                          Custom Design Solutions
                         </label>
                       </div>
                     </div>
@@ -274,13 +278,13 @@
                           class="form-check-input"
                           type="checkbox"
                           id="checkbox2"
-                          value="Service 2"
+                          value="Renovation and Remodeling"
                         />
                         <label
                           class="form-check-label mx-2"
                           for="flexCheckChecked"
                         >
-                          Checked checkbox
+                          Renovation and Remodeling
                         </label>
                       </div>
                     </div>
@@ -292,13 +296,13 @@
                           class="form-check-input"
                           type="checkbox"
                           id="checkbox3"
-                          value="Service 3"
+                          value="Space Planning"
                         />
                         <label
                           class="form-check-label mx-2"
                           for="flexCheckDefault"
                         >
-                          Default checkbox
+                          Space Planning
                         </label>
                       </div>
                     </div>
@@ -308,13 +312,13 @@
                           class="form-check-input"
                           type="checkbox"
                           id="checkbox4"
-                          value="Service 4"
+                          value="Consultation"
                         />
                         <label
                           class="form-check-label mx-2"
                           for="flexCheckChecked"
                         >
-                          Checked checkbox
+                          Consultation
                         </label>
                       </div>
                     </div>
@@ -326,13 +330,13 @@
                           class="form-check-input"
                           type="checkbox"
                           id="checkbox5"
-                          value="Service 5"
+                          value="Furniture Selection"
                         />
                         <label
                           class="form-check-label mx-2"
                           for="flexCheckDefault"
                         >
-                          Default checkbox
+                          Furniture Selection
                         </label>
                       </div>
                     </div>
@@ -342,13 +346,47 @@
                           class="form-check-input"
                           type="checkbox"
                           id="checkbox6"
-                          value="Service 6"
+                          value="Decor and Styling"
                         />
                         <label
                           class="form-check-label mx-2"
                           for="flexCheckChecked"
                         >
-                          Checked checkbox
+                          Decor and Styling
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row my-4">
+                    <div class="col-md-6 form-group">
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          id="checkbox5"
+                          value="Material and Finishes Selection"
+                        />
+                        <label
+                          class="form-check-label mx-2"
+                          for="flexCheckDefault"
+                        >
+                          Material & Finishes Selection
+                        </label>
+                      </div>
+                    </div>
+                    <div class="col-md-6 form-group mt-3 mt-md-0">
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          id="checkbox6"
+                          value="Lighting Design"
+                        />
+                        <label
+                          class="form-check-label mx-2"
+                          for="flexCheckChecked"
+                        >
+                          Lighting Design
                         </label>
                       </div>
                     </div>
@@ -370,11 +408,16 @@
         <div id="banner-container">
           <div id="banner">
             <!-- Banner content goes here -->
-            <p>
-              This is your banner content.
+            <section id="contact" class="contact">
+              <div class="container" data-aos="fade-up">
+                <div class="row">
+                  <div class="mt-lg-0" id="banner-content"></div>
+                </div>
+              </div>
               <span class="close-btn" onclick="closeBanner()">Close</span>
-            </p>
+            </section>
           </div>
+          
         </div>
       </section>
       <!-- End Contact Section -->
@@ -630,12 +673,10 @@
         var selectedServicesInput = document.getElementById(
           "selectedServicesInput"
         );
-
+        
 
         // Get all checkboxes
         var checkboxes = document.querySelectorAll('input[type="checkbox"]');
-
-       
 
         // Add event listener to each checkbox
         checkboxes.forEach(function (checkbox) {
@@ -652,8 +693,43 @@
               return checkbox.value;
             });
 
+            const servicesAndPrices = {
+              "Custom Design Solutions": 1000,
+              "Renovation and Remodeling": 2000,
+              "Space Planning": 3000,
+              Consultation: 4000,
+              "Furniture Selection": 2500,
+              "Decor and Styling": 4500,
+              "Material and Finishes Selection": 2500,
+              "Lighting Design": 1000,
+            };
+
+            // Function to calculate total price based on selected values
+            function calculateTotalPrice(selectedValues, servicesAndPrices) {
+              let totalPrice = 0;
+
+              selectedValues.forEach((service) => {
+                // Check if the service exists in the prices object
+                if (servicesAndPrices.hasOwnProperty(service)) {
+                  totalPrice += servicesAndPrices[service];
+                }
+              });
+
+              return totalPrice;
+            }
+
+           
+
             // Update the disabled input with comma-separated values
             selectedServicesInput.value = selectedValues.join(", ");
+
+            // Update the banner content with selected services and total price
+  
+            var bannerContent = document.getElementById('banner-content');
+            bannerContent.innerHTML = `Selected Services: ${selectedValues.join(', ')}<br>Total Price: ${calculateTotalPrice(selectedValues,servicesAndPrices)}`;
+
+
+            
           });
         });
       });
@@ -677,7 +753,7 @@
           bannerContainer.style.display = "none";
         });
       }
-    </script> --> 
+    </script> -->
 
     <script>
       const scriptURL =
