@@ -1,0 +1,27 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Redirect www to non-www
+    RewriteCond %{HTTP_HOST} ^www\.vitavings\.com [NC]
+    RewriteRule ^(.*)$ https://vitavings.com/$1 [L,R=301]
+
+    # Force HTTPS
+    RewriteCond %{HTTPS} off
+    RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+    # Redirect /contactus.html to /contactus
+    RewriteRule ^contactus$ /contactus.html [L]
+
+    # Redirect /services.html to /services
+    RewriteRule ^services$ /services.html [L]
+
+    # Redirect /aboutus.html to /aboutus
+    RewriteRule ^aboutus$ /aboutus.html [L]
+
+    # Remove file extension, e.g., /page.html to /page
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^([^\.]+)$ $1.html [NC,L]
+
+    # Other rules and configurations can go here...
+
+</IfModule>
