@@ -129,7 +129,7 @@ const getParam = () => {
 };
 
 const blogData = () => {
-  const blogId = 2; // getParam();
+  const blogId = getParam();
   let blogData = blogContent.find((p) => p.id === +blogId);
 
   if (!blogData) {
@@ -159,11 +159,14 @@ const blogData = () => {
       Array.from(elements).forEach((element) => {
         const property = classToPropertyMap[className];
         if (property === "bImage" || "bi1") {
-          element.src = blogData[property] || "assets/img/blog/blog-1.jpg";
+          element.src =
+            blogData[property] ||
+            "assets/img/Interior Claw - Living Room/Interior Claw - Living Room - 7.webp";
         }
         element.innerHTML = blogData[property] || "";
       });
     }
+    //  console.log(document.getElementsByClassName("blog-details")[0].innerHTML);
   } else {
     // Handle the case where the blog post was not found
     // You can display an error message or redirect to a default page
