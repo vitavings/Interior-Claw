@@ -9,6 +9,16 @@
     RewriteCond %{HTTPS} off
     RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
+    
+    #Default page
+    DirectoryIndex interiorclaw.in/home
+
+    #Default contact email
+    SetEnv SERVER_ADMIN info@interiorclaw.in
+
+    #Default charset
+    AddDefaultCharset UTF-s
+
     # Redirect /contactus.html to /contactus
     RewriteRule ^contactus$ /contactus.html [L]
 
@@ -16,7 +26,19 @@
     RewriteRule ^services$ /services.html [L]
 
     # Redirect /aboutus.html to /aboutus
-    RewriteRule ^aboutus$ /aboutus.html [L]
+    RewriteRule ^about$ /aboutus.html [L]
+
+    # Redirect /blogs.html to /blogs
+    RewriteRule ^blogs$ /blogs.html [L]    
+
+    # Redirect /home.html to /home
+    RewriteRule ^home$ /index.html [L]
+
+    # Redirect /home.html to /home
+    RewriteRule ^gallery$ /gallery.html [L]
+
+    # Redirect /home.html to /home
+    RewriteRule ^quote$ /quote.html [L]
 
     # Remove file extension, e.g., /page.html to /page
     RewriteCond %{REQUEST_FILENAME} !-f
