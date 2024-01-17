@@ -10,8 +10,7 @@
     RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
     
-    #Default page
-    DirectoryIndex interiorclaw.in/home
+
 
     #Default contact email
     SetEnv SERVER_ADMIN info@interiorclaw.in
