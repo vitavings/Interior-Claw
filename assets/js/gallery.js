@@ -26,7 +26,7 @@ const galleryData = [
     items: [
       {
         title: "Decoration - 1",
-        img: "assets/img/Interior Claw - Decoration/Interior Claw - Decoration.webp",
+        img: "assets/img/Interior Claw - Decoration/Interior Claw - Decoration - 1.webp",
       },
       // Add more items as needed
       {
@@ -147,8 +147,8 @@ const galleryTxt = galleryData.reduce((accumulatorP, galleryItem) => {
               <h4>${item.title}</h4>
               <p>${galleryItem.category}</p>
               <a href="${item.img}" data-gallery="portfolioGallery"
-                class="portfolio-lightbox preview-link" title="Bedroom 1"><i class="bx bx-plus"></i></a>
-            </div>
+                class="portfolio-lightbox preview-link" title=${item.title}><i class="bx bx-plus"></i></a>
+                </div>
           </div>`
     );
   }, "");
