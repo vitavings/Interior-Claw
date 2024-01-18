@@ -19,7 +19,7 @@
     AddDefaultCharset UTF-s
 
     # Redirect /contactus.html to /contactus
-    RewriteRule ^contactus$ /contactus.html [L]
+    RewriteRule ^contact$ /contactus.html [L]
 
     # Redirect /services.html to /services
     RewriteRule ^services$ /services.html [L]
