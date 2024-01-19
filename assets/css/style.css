@@ -141,7 +141,7 @@ h6 {
 }
 
 #header .logo img {
-  max-height: 40px;
+  max-height: 65px;
 }
 
 /*--------------------------------------------------------------
@@ -936,6 +936,8 @@ section {
 .features .tab-pane p:last-child {
   margin-bottom: 0;
 }
+
+
 
 /*--------------------------------------------------------------
 # Services
