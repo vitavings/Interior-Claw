@@ -7,7 +7,7 @@ const blogContent = [
     bTitle:
       "Small Space Solutions: Tips for Maximizing Functionality and Style",
     bImage:
-      "assets/img/Interior Claw - Living Room/Interior Claw - Living Room - 7.webp",
+      "assets/img/Interior Claw - Living Room/Interior Claw - Living Room - 3.webp",
     bh1: "Embracing Limited Space",
     bh2: "Functional Furniture Selection",
     bh3: "Creative Storage Hacks",
@@ -27,7 +27,7 @@ const blogContent = [
     bTitle:
       "Elegance on a Budget: Unlocking the Secrets of Affordable Home Decor",
     bImage:
-      "assets/img/Interior Claw - Decoration/Interior Claw - Decoration - 2.jpeg",
+      "assets/img/Interior Claw - Decoration/Interior Claw - Decoration - 2.webp",
     bh1: "The Art of Thrifting",
     bh2: "DIY Magic: Crafting Decor on a Dime",
     bh3: "Affordable Finds and Hidden Gems",
