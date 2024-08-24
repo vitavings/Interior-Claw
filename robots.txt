@@ -1,5 +1,5 @@
 User-agent: *
-Allow:
+Allow: /
 
-Disallow: /cgi-bin/
+disallow: /admin
 Sitemap: https://interiorclaw.in/sitemap.xml
