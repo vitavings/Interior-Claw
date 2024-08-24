@@ -36,6 +36,9 @@
     # Redirect /home.html to /home
     RewriteRule ^quote$ /quote.html [L]
 
+    # Redirect /home.html to /home
+    RewriteRule ^quote$ /termsConditions.html [L]
+
     # Remove file extension, e.g., /page.html to /page
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^([^\.]+)$ $1.html [NC,L]
