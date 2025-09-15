@@ -1,5 +1,0 @@
-User-agent: *
-Allow: /
-
-disallow: /admin
-Sitemap: https://interiorclaw.in/sitemap.xml
